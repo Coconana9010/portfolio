@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<title>Ansel Portfolio</title>
+
+<head>
+
+<ul class="topnav">
+
+  <li><a href="/index.html">Home</a></li>
+  <li><a href="/news.html">News</a></li>
+  <li class="right"><a href="javascript:window.location.reload();" id="theme-toggle">Theme</a></li>
+  <li><a class="active" href="/aboutme.html">About Me</a></li>
+  <li class="right"><div id="version"></div></li>
+  
+</ul>
+
+</head>
+
+<body>
+
+<p class="page">
+  I am
+  <span id="age"></span>
+  years old
+
+</p>
+
+
+
+</body>
+
+<script>
+
+const birthDate = new Date("2011-05"); // <-- your birthday
+
+function updateAge() {
+const now = new Date();
+const diff = now - birthDate; // milliseconds difference
+
+// Convert milliseconds into time units
+const years = diff / (1000 * 60 * 60 * 24 * 365.2425); 
+const yearsFloor = Math.floor(years);
+
+const remainder = years - yearsFloor;
+const days = remainder * 365.2425;
+
+document.getElementById("age").textContent =
+years.toFixed(1); // Shows live decimal age
+}
+
+// Update every 50 ms so the number looks smooth but not CPU-heavy
+setInterval(updateAge, 50);
+
+updateAge();
+
+
+ //version update
+  fetch('assets/version.txt')  
+    .then(response => response.text())
+    .then(text => {
+      document.getElementById('version').textContent = text;
+    })
+    .catch(error => console.error('Error loading file:', error));
+
+    const body = document.body;
+
+  // Load saved mode
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+  }
+
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    // Save the new mode
+    const theme = body.classList.contains("dark-mode") ? "dark" : "light";
+    localStorage.setItem("theme", theme);
+  });
+
+
+ //theme button
+  document.getElementById("theme-toggle").addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+  });
+
+
+</script>
+
+<style>
+
+.page, .age {
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+body {margin: 0;}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a, div {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #04AA6D;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+
+
+body {
+  background: white;
+  color: black;
+}
+
+body.dark-mode {
+  background: #121212;
+  color: white;
+}
+
+h1 {
+  color: black
+}
+
+body.dark-mode h1 {
+  color: white
+}
+
+a {
+
+color:blue
+
+}
+
+
+</style>
