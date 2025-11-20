@@ -6,11 +6,11 @@
 <ul class="topnav">
 
   <li><a href="index.html">Home</a></li>
-  <li><a class="active" href="news.html">News</a></li>
+  <li><a href="news.html">News</a></li>
   <li class="right theme"><a href="javascript:window.location.reload();" id="theme-toggle">Theme</a></li>
   <li><a href="aboutme.html">About Me</a></li>
   <li class="right"><div id="version"></div></li>
-  <li><a href="contactme.html">Contact Me</a></li>
+  <li><a class="active" href="contactme.html">Contact Me</a></li>
 </ul>
 
 </head>
@@ -19,9 +19,29 @@
 
 <p class="page">
 
-lots of exiting things are happening right now :)
-
 </p>
+
+<form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+    <h2>Contact Us</h2>
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" name="phone">
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <!-- Redirect to thank you page -->
+    <input type="hidden" name="_next" value="index.html">
+    <!-- Optional: disable captcha -->
+
+    <button type="submit">Send Message</button>
+  </form>
 
 </body>
 
@@ -62,10 +82,36 @@ lots of exiting things are happening right now :)
 
 <style>
 
-.page {
+h1 {
+  text-align: center;
+  margin: 35px 0 20px 0;
+}
 
-    padding-left: 10px;
-    padding-right: 10px;
+
+form {
+  width: 300px;
+  margin: 50px auto;
+  font-family: Arial, sans-serif;
+}
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+}
+button {
+  background: #0078ff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background: #005fcc;
+}
+
+.page {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 body {margin: 0;}
