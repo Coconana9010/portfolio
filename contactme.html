@@ -3,6 +3,8 @@
 
 <head>
 
+<link rel="stylesheet" href="assets/main.css">
+
 <ul class="topnav">
 
   <li><a href="index.html">Home</a></li>
@@ -23,7 +25,7 @@
 </p>
 
 <form action="https://formsubmit.co/anselbizznes@gmail.com" method="POST">
-    <h2>Leave me a message</h2>
+    <h2>Join my newsletter!</h2>
 
     <label for="name">Name</label>
     <input type="text" id="name" name="name" required>
@@ -36,10 +38,6 @@
 
     <label for="message">Message</label>
     <textarea id="message" name="message" required></textarea>
-
-    <!-- Redirect to thank you page -->
-    <input type="hidden" name="_next" value="index.html">
-    <!-- Optional: disable captcha -->
 
     <button type="submit">Send Message</button>
   </form>
@@ -89,26 +87,7 @@ h1 {
 }
 
 
-form {
-  width: 300px;
-  margin: 50px auto;
-  font-family: Arial, sans-serif;
-}
-input, button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 8px;
-}
-button {
-  background: #0078ff;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-button:hover {
-  background: #005fcc;
-}
+
 
 .page {
   padding-left: 10px;
