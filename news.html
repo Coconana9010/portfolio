@@ -19,19 +19,24 @@
 
 <p class="page">
 
+lots of exiting stuff is going on
 
 
 </p>
+
+
+
 
 </body>
 
 <script>
 
+
  //version update
   fetch('assets/version.txt')  
     .then(response => response.text())
     .then(text => {
-      document.getElementById('verison').textContent = text;
+      document.getElementById('version').textContent = text;
     })
     .catch(error => console.error('Error loading file:', error));
 
@@ -57,7 +62,6 @@
   });
 
 
-
 </script>
 
 <style>
@@ -80,7 +84,7 @@ ul.topnav {
 
 ul.topnav li {float: left;}
 
-ul.topnav li a,div {
+ul.topnav li a, li div {
   display: block;
   color: white;
   text-align: center;
