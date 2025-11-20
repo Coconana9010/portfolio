@@ -21,17 +21,32 @@
 <body>
 
 <p class="page">
-  I am <span id="age"></span> years old (updates live)
+  
+  I am ≈ <span id="age"></span> years old
 <br>
+
+<div id="myDIV">
+<img src="assets/profile.png" height="200">
+</div>
+
+<button class="mebutton" onclick="showProfile()">Me</button>
 
 
 </p>
 
 
-
 </body>
 
 <script>
+
+function showProfile() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 
 const birthDate = new Date("2011-06"); // <-- your birthday
 
@@ -47,7 +62,7 @@ const remainder = years - yearsFloor;
 const days = remainder * 365.2425;
 
 document.getElementById("age").textContent =
-years.toFixed(7); // Shows live decimal age
+years.toFixed(2); // Shows live decimal age
 }
 
 // Update every 50 ms so the number looks smooth but not CPU-heavy

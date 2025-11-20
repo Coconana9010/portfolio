@@ -20,6 +20,15 @@ input, button {
   padding: 10px;
   margin-top: 8px;
 }
+
+button.mebutton {
+
+width: 100px;
+border-radius: 20px;
+
+}
+
+
 button {
   background: #0078ff;
   border: none;
@@ -27,6 +36,7 @@ button {
   font-size: 16px;
   cursor: pointer;
 }
+
 button:hover {
   background: #005fcc;
 }
@@ -35,9 +45,12 @@ button:hover {
 
     padding-left: 10px;
     padding-right: 10px;
-    max-width: 600px;   /* limit width */
+
 }
 
+#myDIV {
+    display: none;
+}
 
 body {margin: 0;}
 
