@@ -31,7 +31,7 @@
 
 <script>
 
-const birthDate = new Date("2011-05"); // <-- your birthday
+const birthDate = new Date("2011-05-27"); // <-- your birthday
 
 function updateAge() {
 const now = new Date();
@@ -45,7 +45,7 @@ const remainder = years - yearsFloor;
 const days = remainder * 365.2425;
 
 document.getElementById("age").textContent =
-years.toFixed(1); // Shows live decimal age
+years.toFixed(7); // Shows live decimal age
 }
 
 // Update every 50 ms so the number looks smooth but not CPU-heavy
