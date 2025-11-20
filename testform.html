@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #0078ff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #005fcc;
+    }
+
+    /* Thank you popup */
+    #thankyou {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      font-size: 18px;
+      text-align: center;
+      padding-top: 120px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="contactForm" action="https://formsubmit.co/237ca088f8be1fab36550051570d0b91" method="POST" target="hidden_iframe">
+    <h2>Contact Us</h2>
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" name="phone">
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <!-- Optional hidden fields -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <button type="submit">Send Message</button>
+
+    <div id="thankyou">Thank you! Your message has been sent.</div>
+  </form>
+
+  <!-- Hidden iframe to prevent page reload -->
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const thankyou = document.getElementById('thankyou');
+
+    form.addEventListener('submit', function(event) {
+      // show popup
+      thankyou.style.display = 'block';
+      // hide popup after 3 seconds
+      setTimeout(() => {
+        thankyou.style.display = 'none';
+        form.reset();
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
