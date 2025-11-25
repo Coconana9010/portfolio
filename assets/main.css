@@ -4,19 +4,17 @@
 
 /* Chrome, Edge, Safari */
 ::-webkit-scrollbar {
-  width: 100px;
+  width: 15px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f0f0f0;
+  background: #121212;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #6b6b6b;
-  border-radius: 600px;
+  border-radius: 5px;
 }
-
-
 
 
 @media (max-width: 600px) {
