@@ -7,6 +7,20 @@
   width: 15px;
 }
 
+.newslink {
+
+  color: #000;
+
+}
+
+.newslink:hover {
+
+  background-color: #404040;;
+  border-radius: 2px;
+
+}
+
+
 ::-webkit-scrollbar-track {
   background: #121212;
 }
@@ -88,7 +102,6 @@ width: 100px;
 border-radius: 20px;
 
 }
-
 
 button {
   background: #0078ff;
